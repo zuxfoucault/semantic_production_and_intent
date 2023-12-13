@@ -1,0 +1,347 @@
+% !TEX TS-program = pdflatexmk
+%\documentclass[paper=a4,fontsize=14pt,pagesize,DIV=calc]{scrreprt}
+%\documentclass[12pt]{article}
+\documentclass[man, floatsintext, draftfirst]{apa6}
+\captionsetup{singlelinecheck=on}
+%\documentclass[paper=a4,fontsize=14pt]{scrartcl}
+%\documentclass[paper=a4,headheight=13cm,headinclude,fontsize=14pt]{scrreprt}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+%\usepackage[sorting=nyt,style=apa]{biblatex}
+\usepackage[sorting=nyt,style=apa,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{/Volumes/SSD/Space/bibtexData/dialog.bib}
+%% Modify “Bibliography” to “References”
+%\defbibheading{references}[\refname]{\section*{\centering#1}\markboth{#1}{#1}}
+
+% default: pdfLaTeX
+%\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage[adobe-utopia]{mathdesign}
+%\usepackage[utf8]{inputenc} % bug
+%\usepackage[babel=true]{microtype} % after add xeCJK
+%\usepackage{xeCJK}
+%\setCJKmainfont{BiauKai}
+
+%\usepackage[top=1cm, bottom=1.2cm, left=1cm, right=1cm]{geometry}
+%: set margins
+
+
+%\usepackage{setspace} %line spacing
+%\linespread{1.5}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{soBrBlack}{RGB}{0,43,54}
+\definecolor{soBrWhite}{RGB}{253,246,227}
+\definecolor{soWhite}{RGB}{238 232 213}
+\definecolor{soBrCyan}{RGB}{147 161 161}
+\definecolor{soYellow}{RGB}{181,137,0}
+%\pagecolor{soBrBlack}
+
+
+\usepackage{framed}
+\definecolor{shadecolor}{rgb}{1,0.8,0.3}
+\definecolor{shadecolor}{RGB}{150,75,22}
+
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees,arrows, decorations.markings,positioning}
+\usetikzlibrary{backgrounds, fit, decorations.pathmorphing}
+%\usetikzlibrary{automata,}
+% for double arrows a la chef
+% adapt line thickness and line width, if needed
+\tikzstyle{vecArrow} = [thick, decoration={markings,mark=at position
+	1 with {\arrow[semithick]{open triangle 60}}},
+	double distance=1.4pt, shorten >= 5.5pt,
+	preaction = {decorate},
+	postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}]
+\tikzstyle{innerWhite} = [semithick, white,line width=1.4pt, shorten >= 4.5pt]
+
+\newcommand\mybox[2][]{\tikz[overlay]\node[fill=blue!20,inner sep=2pt, anchor=text, rectangle, rounded corners=1mm,#1] {#2};\phantom{#2}}
+%http://tex.stackexchange.com/questions/36401/drawing-boxes-around-words
+
+%\usepackage{footmisc}
+
+%\usepackage{amsmath}
+
+%\usepackage[breaklinks]{hyperref}
+\usepackage[normalem]{ulem}
+
+
+% Color wave underline
+\makeatletter
+\newcommand\colorwave[1][blue]{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \textcolor{#1}{\char58}}}\ULon}
+\font\sixly=lasy6 % does not re-load if already loaded, so no memory problem.
+\makeatother
+
+
+%\usepackage{fancyhdr}
+%%\makeatletter
+%\fancypagestyle{Aplain}{%
+%\fancyhf{} % clear all header and footer fields
+%\fancyfoot[C]{\textcolor{soBrCyan} \thepage} % except the center
+%\renewcommand{\headrulewidth}{0pt}% .4pt header rule
+%%\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi\color{red}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+%\renewcommand{\footrulewidth}{0pt}% No footer rule
+%%  \def\footrule{{\if@fancyplain\let\footrulewidth\plainfootrulewidth\fi\vskip-\footruleskip\vskip-\footrulewidth\hrule\@width\headwidth\@height\footrulewidth\vskip\footruleskip}}
+%}
+%%\makeatother
+
+
+%% set indent
+%\newlength\tindent
+%\setlength{\tindent}{\parindent plus 1em}
+%%\setlength{\parindent}{0pt}
+%\renewcommand{\indent}{\hspace*{\tindent}}
+
+
+%: colitem
+%\newcommand{\colitem}{\item[\color{soWhite} resp.]}
+
+
+%: for tabular line
+\usepackage{arydshln}
+
+
+% Intelligent cross-referencing
+%\usepackage{cleveref}
+
+% Typography of the Table of Contents, List of Figures and List of Tables
+%\usepackage{tocloft}
+
+
+%\color{soBrCyan} % set article::global text color
+%\color{soYellow}
+
+%\setcounter{secnumdepth}{5} % about document structure
+%\setcounter{tocdepth}{5}
+%\setcounter{section}{4} The value where the section numbering starts
+
+\usepackage[ampersand]{easylist}
+
+
+\usepackage{textpos}
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+
+
+%\setlength{\parindent}{0cm}
+
+%\usepackage{layouts}
+%\usepackage{layout}
+
+%\renewcommand*{\chapterheadstartvskip}{\vspace*{0cm}}
+%\renewcommand*{\chapterheadendvskip}{\vspace{0cm}}
+%\renewcommand*{\chapterheadstartvskip}{\vspace*{-\topskip}}
+%\renewcommand{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\graphicspath{{./}}
+%\graphicspath{{../}}
+%\DeclareGraphicsExtensions{.png}
+
+
+%% Adjust maximum depth of itemize (and its bullet symbol)
+%\usepackage{pifont}
+%\usepackage{enumitem}
+%\setlistdepth{9}
+%\setlist[itemize,1]{label=\ding{223}}
+%\setlist[itemize,2]{label=\ding{229}}
+%\setlist[itemize,3]{label=\ding{242}}
+%\setlist[itemize,4]{label=\ding{235}}
+%\setlist[itemize,5]{label=\ding{212}}
+%\setlist[itemize,6]{label=\ding{236}}
+%\setlist[itemize,7]{label=\textbullet}
+%\setlist[itemize,8]{label=\ding{245}}
+%\setlist[itemize,9]{label=$\bullet$}
+%\renewlist{itemize}{itemize}{9}
+%\setlist[itemize]{leftmargin=*} % left margin or indent; labelindent=\parindent
+
+%% Continuous v. per-chapter/section numbering of figures
+%\usepackage{chngcntr}
+%\counterwithout{figure}{chapter}
+
+\title{Brain mapping of semantic production and semantic intent}
+\shorttitle{Semantic production and semantic intent}
+\author{Fu-Te Wong}
+\affiliation{\color{white} .}
+
+%: 1. begin document
+\begin{document}
+\maketitle
+%miscellaneous <<<
+%\thispagestyle{empty} ％ no number on first page
+%\pagestyle{empty} %no number from second page
+%\pagestyle{Aplain} % correspond to "\fancypagestyle{Aplain}{%"
+%\def\footnotelayout{\color{soWhite}}
+%\ifx \footnoterule  \undefined
+%\footnoterule{\color{soWhite}}
+%\fi
+%\color{soYellow}
+%\renewcommand\footnoterule{\color{soWhite} \kern-3pt \hrule width 0.4\columnwidth \kern 2.6pt}
+
+%\currentpage
+%\pagediagram
+%\pagevalues
+%\layout %\>>>
+
+%\begin{spacing}{1}
+%\chapter*{Brain mapping of semantic production and semantic intent}
+%\end{spacing}
+
+\section*{Introduction}
+With the advance of brain decoding technique, studies have successfully identified neurocognitive representations into its neural and psychological components based on the underlying brain activation pattern. The computational models in those studies also demonstrated subject-independent properties and can be applied to words that did not contained in training data \parencites{Mitchell2008}{Just2010}. With respect to time dimension, researches related to sequentially word-by-word neural representation, which mapped word-by-word vectors produced by the deep learning neural networks or language model and the word-by-word neural activity recorded by Magnetoencephalography (MEG), suggest that there is a relationship between the neural network constituent and its corresponding time/location brain process \parencites{LeilaWehbe2014}{Fyshe2016}. It is worth noting that the neural representation of higher order concept may be altered in some clinical population, for example, people with autistic spectrum disorder have altered neural representation of social self-concept \parencite{Just2014}. This characteristic could be served as a biomarker for the future application.\\
+
+Recent neuroimaging studies have mapped large comprehensive semantic information across the entire semantic system \parencite{Huth2016}. A dual-stream model has been proposed that dorsal stream processing form-to-articulation and ventral stream processing from-to-meaning, respectively \parencites{Fridriksson2016}{Hickok2007}. Therefore, the processes that comprehending semantic information and that utilizing semantic information may not guarantee to active the same semantic representation in the brain. The aim of this research is to investigate the dynamic semantic processing in a contextual environment of dialog.\\
+
+In order to a create a real-time conversational context that allows experimenters to mark each dialog event in the fMRI setting with precise timestamp while mapping between both receiving and producing semantic information and their corresponding brain activities, we implement an intelligent conversational bot with the functionality of natural language understanding and natural language generation that participants can have conversation with during fMRI scanning inside the MRI bore. In addition, an important functionality in the algorithm of dialog management is belief state tracking \parencites{Young2013}{wen2016network}{Hakkani-Tur2016}{YangCHCLGD16}{chen2016}{ChenHTCGD16}{wen2017latent}, which can track the users’ goal online during the conversational interaction. These belief states included a predefined set of user intents, and this information will be extracted online from users’ expressing sentence based on either predefined rule-based or pre-trained neural-network models while users are having a conversation with the intelligent conversational bot. Whether or not these belief states that have similar intention will activate a consistent neuronal representation is an intriguing empirical question that will also be examined in this study.\\
+
+To sum up, investigating the dynamic conversational process will not only provide chances to inspect the elements of receiving, producing semantic neuronal representation, and the neuronal representation of the user semantic intent but also the dynamic transition among them. Furthermore, it is possible to investigate the alignment between the neural network in each component of the chat bot module and the neurocognitive activation patterns in participants, and utilize the neurocognitive activation patterns as feedback for chat bot training and developing.\\
+% Suddenly, I think there are several sub-aims inherent in the topic.
+% How to deal with the emotional components? and make use of this information.
+% The emotion part could be parcel out, i think!
+% As for the corresponding response from bot, i think if the bot can capture or learned a emotional response, the response itself can be emotional coherent!
+% So one question would be count the emotion embedded in word vector or in another emotion vector?
+
+%>>20180314 17:57:59 Wednesday CST
+%discuss with timothy lane
+%good to hear his thoughts and old stories!
+%the discussion about the brain mapping project is a little bit of off-track
+%still could not find a converge direction
+
+%%%semantic_map_head
+\par\hfill
+\par\hfill
+\par\hfill
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+[place/.style={rectangle,draw=blue!50,fill=blue!20,thick,
+                 inner sep=3pt,minimum size=6mm, align=left},
+ transition/.style={rectangle,draw=black!50,fill=black!20,thick,
+                 inner sep=3pt,minimum size=4mm, align=left},
+ bot/.style={rectangle,draw=black!50,fill=black!10,thick,
+                 inner sep=3pt,minimum size=4mm, align=left},
+ ann/.style={rectangle,draw=black!50,fill=black!10,thick,
+                 inner sep=3pt,minimum size=4mm, align=left},
+ line width=3pt]
+%\draw[step=1cm,gray, very thin] (-7,-5) grid (13,1);
+\node[place] (receive) [xshift=20mm] {Receive semantic\\ information (R)};
+\node[place] (intent) [right=of receive, xshift=0mm] {Intent generation\\ (I)};
+\node[place] (producing) [right=of intent, xshift=0mm] {Producing semantic\\ information (P)};
+\node[transition] (Participants) [above=of intent, xshift=0mm] {Mental model in participants};
+\draw [->] (receive) -- (intent);
+\draw [->] (intent) -- (producing);
+
+\node[transition] (DM) [below=of intent, yshift=0mm] {Dialog proceeding};
+\node[bot] (DS1) [below=of DM, xshift=-19mm] {\footnotesize Bot: Introduction; greeting; \enquote{\ldots May I help you？”}};
+\node (D1) [above=of DS1, xshift=-22mm, yshift=-10mm] {\footnotesize initiation()};
+\node[place] (DU1) [below=of DS1, xshift=17mm, yshift=10mm] {\footnotesize Participant: (R), (I), (P) \enquote{I got stomachache, which department should I visit？}};
+\node[bot] (DS2) [below=of DU1, xshift=1.5mm, yshift=-5mm] {\footnotesize \enquote{If you have stomachache, you can visit home medicine or internal medicine.}};
+\node (D2) [below=of DU1, xshift=-5mm, yshift=10mm] {\footnotesize intent=beliefStateTracking(); request(intent=department)};
+\node[place] (DU2) [below=of DS2, xshift=-20.2mm, yshift=10mm] {\footnotesize \enquote{Is there any available slot for home medicine？}};
+\node (D3) [below=of DU2, xshift=12mm, yshift=10mm] {\footnotesize intent=beliefStateTracking(); request(intent=time)};
+
+%\node[bot] (DS1) [below=of DM, xshift=-19mm] {\footnotesize Bot: Introduction; greeting; \enquote{\ldots May I help you？”}};
+%\node (D1) [above=of DS1, xshift=-34mm, yshift=-10mm] {\footnotesize initiation()};
+%\node[place] (DU1) [below=of DS1, xshift=3.8mm, yshift=10mm] {\footnotesize Participant: (R), (I), (P) \enquote{I got stomach, which division should I visit？}};
+%\node[bot] (DS2) [below=of DU1, xshift=-24mm] {\footnotesize \enquote{If you have stomach, you can visit home medicine or internal medicine.}};
+%\node (D2) [below=of DU1, xshift=-5mm, yshift=10mm] {\footnotesize intent=beliefStateTracking(); request(intent=division)};
+%\node[place] (DU2) [below=of DS2, xshift=4.7mm, yshift=10mm] {\footnotesize \enquote{Is there any available slot for home medicine？}};
+%\node (D3) [below=of DU2, xshift=12mm, yshift=10mm] {\footnotesize intent=beliefStateTracking(); request(intent=time)};
+
+%\draw [->] (intent) to [out=270, in=270] (loop);
+%\draw [->] (loop) to [out=90, in=180] (receive);
+\end{tikzpicture}
+\caption{Mental model and example dialog}
+\label{fig:F1}
+\end{figure}
+
+
+\par\hfill
+\par\hfill
+\par\hfill
+
+
+%\begin{tikzpicture}
+%[place/.style={rectangle,draw=blue!50,fill=blue!20,thick,
+%                 inner sep=0pt,minimum size=6mm, align=left},
+% transition/.style={rectangle,draw=black!50,fill=black!20,thick,
+%                 inner sep=0pt,minimum size=4mm, align=left},
+% line width=3pt]
+%\draw[step=1cm,gray, very thin] (-7,-5) grid (13,1);
+%\node[place] (pfc) {Brain (vmPFC)};
+%\node[place] (learning) [below right=of pfc, xshift=-15mm] {self-relevant reinforcemen\\ learning algorithms};
+%\node[place] (norm-driven) [below=of learning, xshift=5cm] {norm-driven behaviours};
+%\node[transition] (loop) [below left=of learning, xshift=-1cm, yshift=2cm] {Feedback loop (dorsal\\ frontostriatal circuitry,\\ dorsal striatum)};
+%\draw [->] (pfc) -- (learning);
+%\draw [->] (learning) -- (norm-driven);
+%\draw [->] (learning) to [out=270, in=270] (loop);
+%\draw [->] (loop) to [out=90, in=180] (pfc);
+%\end{tikzpicture}
+
+
+
+
+
+\section*{Method}
+
+\paragraph*{Participants}
+10 participants with normal or corrected-to-normal vision will be recruited.
+
+\paragraph*{Materials}
+Conversation content will include several themes that most people have related experiences, such as looking for doctor and booking tickets.
+
+\paragraph*{Procedure}
+In the functional MRI scan, at the beginning of each scenario, the bot will narrate an introduction containing the background story and the goals participants have to complete. A brief example is like that a person had seafood last night, then, next morning the person felt stomach. Now the participants have to look for doctors through conversation with the bot to request information and make a reservation. At the end of each scenario, participants will be invited to talk about their experience related to the current scenario. Once participants have completed a scenario, there will be five minutes rest followed by next new scenario.\\
+
+
+\printbibliography
+
+%We think such belief could map to higher order cognitive activities.
+%
+%Such systems rely on probabilistic tracking of dialog state, with improvements in the tracking quality being important in the system-wide performance in a dialog system (see e.g. Young et al. (2009)).
+%
+%Using Deep Neural Networks allows for the modelling of complex interactions between arbi- trary features of the dialog.
+%
+%Recent developments in speech research have shown promising results using deep learning, motivating its use in the context of dialog (Hinton et al., 2012; Li et al., 2013).
+%
+%a framework based on the partially observable Markov decision process (POMDP), which is a well-established, statistical model of spoken dialogue management \parencites{Roy2000}{Williams2007}
+%
+%how to correlate the fMRI 
+%
+%between a dorsal frontoparietal stream and a ventral temporal–frontal stream associated with separate components.
+%Method 
+%design
+%
+%Collect 10 participants,
+%include several knowledge of domain,
+%
+%
+%Semantic system;
+%
+%Destruction of the left STG does not lead to deficits in the auditory comprehension of speech, but instead causes deficits in speech production \parencite{Damasio1980}
+%
+%
+%The task allow researchers to investigate the transition between speech reception and production.
+%
+%borrowing from the 
+%
+%perceptual process and speech production, 
+%
+%the acoustic speech network must interface with conceptual systems on the one hand,
+%and. motor-articulatory systems on the other.
+%
+%This model, mostly derived from nonhuman primate data, distinguishes between an anterior/ ventral route (“what” stream) involving connections from the left posterior superior temporal gyrus (STG) to the left inferior frontal gyrus (LIFG), including pars ope rcularis and pars triangularis, and a posterior/dorsal route (“where” stream) that extends from the posterior STG to the intraparietal lobule and the premotor cortex.
+%
+%
+%In the processing of natural language processing 
+%
+%area of speech reception and production  \parencite{Fridriksson2016}
+
+\end{document}
+
+Natural speech reveals the semantic maps that tile human cerebral cortex
